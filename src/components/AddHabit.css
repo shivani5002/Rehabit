@@ -1,0 +1,518 @@
+/* AddHabit Component Specific Styles */
+.add-habit-modal .addHabitFormHybrid {
+  display: flex;
+  width: 100%;
+  max-width: 850px;
+  min-height: 520px;
+  background: #fffafe;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(214, 49, 76, 0.15);
+  border: 2px solid #d6304c;
+  margin: 0 auto;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.add-habit-modal .addHabitLeft,
+.add-habit-modal .addHabitRight {
+  flex: 1;
+  padding: 30px 25px;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.add-habit-modal .addHabitLeft {
+  background: linear-gradient(135deg, #fff6f5 0%, #ffeceb 100%);
+  align-items: center;
+  border-right: 2px solid #da746f;
+  position: relative;
+  overflow: hidden;
+  flex: 0.9;
+}
+
+.add-habit-modal .addHabitLeft::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #d6304c, #da746f);
+}
+
+.add-habit-modal .leftContent {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.add-habit-modal .headerSection {
+  text-align: center;
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid rgba(214, 49, 76, 0.1);
+  flex-shrink: 0;
+}
+
+.add-habit-modal .habitIcon {
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.add-habit-modal .title {
+  color: #1a1a1d;
+  margin: 0;
+  font-weight: 800;
+  font-size: 1.6rem;
+  line-height: 1.2;
+}
+
+.add-habit-modal .mainContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.add-habit-modal .habitTips {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid rgba(214, 49, 76, 0.15);
+  box-shadow: 0 4px 12px rgba(214, 49, 76, 0.08);
+  flex-shrink: 0;
+}
+
+.add-habit-modal .tipsTitle {
+  color: #1a1a1d;
+  margin: 0 0 15px 0;
+  font-weight: 700;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+}
+
+.add-habit-modal .tipsIcon {
+  font-size: 1.2rem;
+}
+
+.add-habit-modal .tipsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.add-habit-modal .tipItem {
+  padding: 10px 0;
+  color: #1a1a1d;
+  font-size: 14px;
+  border-bottom: 1px solid rgba(214, 49, 76, 0.08);
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  line-height: 1.4;
+}
+
+.add-habit-modal .tipItem:last-child {
+  border-bottom: none;
+}
+
+.add-habit-modal .tipBullet {
+  width: 6px;
+  height: 6px;
+  background: #d6304c;
+  border-radius: 50%;
+  margin-top: 7px;
+  flex-shrink: 0;
+}
+
+.add-habit-modal .motivationQuote {
+  background: linear-gradient(135deg, #d6304c, #da746f);
+  color: #fffafe;
+  border-radius: 12px;
+  padding: 18px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(214, 49, 76, 0.2);
+  margin-top: auto;
+  flex-shrink: 0;
+}
+
+.add-habit-modal .quoteIcon {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.add-habit-modal .quoteText {
+  margin: 0;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.add-habit-modal .addHabitRight {
+  background: #fffafe;
+  position: relative;
+  flex: 1.1;
+  overflow-y: auto;
+  min-height: 0;
+}
+
+.add-habit-modal .closeButton {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  font-size: 26px;
+  color: #d6304c;
+  cursor: pointer;
+  z-index: 10;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.add-habit-modal .closeButton:hover,
+.add-habit-modal .closeButton:focus {
+  color: #da746f;
+  background-color: rgba(214, 49, 76, 0.1);
+  outline: 2px solid #d6304c;
+  transform: scale(1.1);
+}
+
+.add-habit-modal .formHybrid {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 5px;
+  min-height: 0;
+}
+
+.add-habit-modal .formSection {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(214, 49, 76, 0.1);
+}
+
+.add-habit-modal .formSection:last-of-type {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.add-habit-modal .formGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-habit-modal .label {
+  color: #1a1a1d;
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.add-habit-modal .required::after {
+  content: '*';
+  color: #d6304c;
+  margin-left: 2px;
+}
+
+.add-habit-modal .input,
+.add-habit-modal .textarea,
+.add-habit-modal select {
+  width: 100%;
+  padding: 12px 10px;
+  border: 2px solid #da746f;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #1a1a1d;
+  background: #fffafe;
+  font-family: inherit;
+  transition: all 0.2s ease;
+}
+
+.add-habit-modal .input:focus,
+.add-habit-modal .textarea:focus,
+.add-habit-modal select:focus {
+  outline: none;
+  border-color: #d6304c;
+  box-shadow: 0 0 0 3px rgba(214, 49, 76, 0.1);
+  transform: translateY(-1px);
+}
+
+.add-habit-modal .textarea {
+  min-height: 70px;
+  resize: vertical;
+}
+
+.add-habit-modal .rowDateGroup {
+  display: flex;
+  gap: 12px;
+}
+
+.add-habit-modal .dateGroup {
+  flex: 1;
+}
+
+.add-habit-modal .primaryButton {
+  padding: 14px 0;
+  background: linear-gradient(135deg, #d6304c, #da746f);
+  color: #fffafe;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 15px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.add-habit-modal .primaryButton:hover,
+.add-habit-modal .primaryButton:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(214, 49, 76, 0.3);
+  outline: none;
+}
+
+.add-habit-modal .primaryButton:active {
+  transform: translateY(0);
+}
+
+.add-habit-modal .error {
+  background: #ffeaea;
+  color: #b00020;
+  border: 1px solid #b00020;
+  border-radius: 6px;
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.add-habit-modal .success {
+  background: #e8f5e8;
+  color: #28a745;
+  border: 1px solid #28a745;
+  border-radius: 6px;
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+/* Mobile Responsive Design - Hide left section on small devices */
+@media (max-width: 768px) {
+  .add-habit-modal .addHabitFormHybrid {
+    flex-direction: column;
+    min-height: auto;
+    margin: 0;
+    border-radius: 12px;
+    max-width: 95vw;
+    max-height: 85vh;
+    overflow: hidden;
+  }
+  
+  /* Hide the left section completely on mobile */
+  .add-habit-modal .addHabitLeft {
+    display: none;
+  }
+  
+  /* Make right section take full width */
+  .add-habit-modal .addHabitRight {
+    flex: 1;
+    width: 100%;
+    padding: 50px 25px 25px 25px !important;
+    max-height: none;
+    overflow-y: auto;
+  }
+  
+  .add-habit-modal .closeButton {
+    top: 12px;
+    right: 12px;
+    background: rgba(255, 250, 254, 0.95);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(214, 49, 76, 0.2);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .add-habit-modal .title {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .add-habit-modal .formHybrid {
+    gap: 18px;
+    margin-top: 0;
+  }
+  
+  .add-habit-modal .formSection {
+    gap: 18px;
+    padding-bottom: 15px;
+  }
+  
+  .add-habit-modal .primaryButton {
+    margin-top: 20px;
+    padding: 16px 0;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .add-habit-modal .addHabitFormHybrid {
+    border-radius: 10px;
+    border: 1px solid #d6304c;
+    max-height: 90vh;
+    max-width: 92vw;
+  }
+  
+  .add-habit-modal .addHabitRight {
+    padding: 45px 20px 20px 20px !important;
+  }
+  
+  .add-habit-modal .closeButton {
+    top: 10px;
+    right: 10px;
+    width: 36px;
+    height: 36px;
+    font-size: 24px;
+  }
+  
+  .add-habit-modal .title {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+  }
+  
+  .add-habit-modal .formHybrid {
+    gap: 16px;
+  }
+  
+  .add-habit-modal .formSection {
+    gap: 16px;
+    padding-bottom: 12px;
+  }
+  
+  .add-habit-modal .rowDateGroup {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .add-habit-modal .input,
+  .add-habit-modal .textarea,
+  .add-habit-modal select {
+    padding: 14px 12px;
+    font-size: 16px; /* Better for mobile touch */
+  }
+  
+  .add-habit-modal .textarea {
+    min-height: 80px;
+  }
+  
+  .add-habit-modal .primaryButton {
+    padding: 16px 0;
+    margin-top: 15px;
+    font-size: 16px;
+  }
+  
+  .add-habit-modal .label {
+    font-size: 15px;
+    margin-bottom: 8px;
+  }
+}
+
+/* Extra small height devices */
+@media (max-height: 600px) and (max-width: 768px) {
+  .add-habit-modal .addHabitFormHybrid {
+    max-height: 95vh;
+  }
+  
+  .add-habit-modal .addHabitRight {
+    padding: 40px 20px 20px 20px !important;
+  }
+  
+  .add-habit-modal .title {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+  }
+  
+  .add-habit-modal .formHybrid {
+    gap: 12px;
+  }
+  
+  .add-habit-modal .formSection {
+    gap: 12px;
+    padding-bottom: 8px;
+  }
+  
+  .add-habit-modal .primaryButton {
+    margin-top: 12px;
+    padding: 14px 0;
+  }
+}
+
+/* Prevent body scroll when modal is open */
+body.modal-open {
+  overflow: hidden;
+}
+
+/* Modal backdrop styles */
+.hybrid-dashboard .modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: rgba(26,26,29,0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(2px);
+  padding: 20px;
+  overflow-y: auto;
+}
+
+@media (max-width: 768px) {
+  .hybrid-dashboard .modal-backdrop {
+    padding: 15px;
+    align-items: flex-start;
+  }
+  
+  .hybrid-dashboard .modal-card {
+    max-height: 90vh;
+    margin: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .hybrid-dashboard .modal-backdrop {
+    padding: 10px;
+  }
+}
