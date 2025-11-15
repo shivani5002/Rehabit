@@ -802,7 +802,7 @@
 }
 
 .week-day.today .wd-date {
-  color: #d6304c; /* Your red color */
+  color: white; /* Your red color */
   font-weight: 700;
 }
 
@@ -837,4 +837,3 @@
   background: transparent;
   margin-top: 2px;
 }
-
