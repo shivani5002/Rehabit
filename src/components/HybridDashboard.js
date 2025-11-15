@@ -12,22 +12,40 @@ function uid(prefix = "id") {
   return prefix + Math.random().toString(36).slice(2, 9);
 }
 
+// FIXED: Use local date instead of UTC
 function todayKey(date = new Date()) {
-  return date.toISOString().slice(0, 10);
+  // Use local date components to avoid timezone issues
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
 }
 
 // Helper function to check if habit exists on a given date
+// FIXED: Better date comparison
 function habitExistsOnDate(habit, selectedDate) {
   const habitStartDate = habit.startDate || habit.createdAt;
+  
+  // Convert both dates to Date objects for proper comparison
+  const selected = new Date(selectedDate);
+  const start = new Date(habitStartDate);
+  
+  // Reset times to compare only dates
+  selected.setHours(0, 0, 0, 0);
+  start.setHours(0, 0, 0, 0);
 
   // If selectedDate is before start date → hide
-  if (new Date(selectedDate) < new Date(habitStartDate)) {
+  if (selected < start) {
     return false;
   }
 
-  // ⭐ NEW: If habit has an end date and selectedDate is after end date → hide
-  if (habit.endDate && new Date(selectedDate) > new Date(habit.endDate)) {
-    return false;
+  // If habit has an end date and selectedDate is after end date → hide
+  if (habit.endDate) {
+    const end = new Date(habit.endDate);
+    end.setHours(0, 0, 0, 0);
+    if (selected > end) {
+      return false;
+    }
   }
 
   return true;
