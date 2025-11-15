@@ -851,7 +851,6 @@ export default function LandingPage() {
           <div className="nav-links">
             <a href="#features">Features</a>
             <a href="#about">About</a>
-            <a href="#pricing">Pricing</a>
             <a href="/signup" className="nav-cta">Get Started</a>
           </div>
           <button className="menu-toggle" onClick={() => setMenuOpen(true)}>
@@ -867,7 +866,6 @@ export default function LandingPage() {
         </button>
         <a href="#features" onClick={() => setMenuOpen(false)}>Features</a>
         <a href="#about" onClick={() => setMenuOpen(false)}>About</a>
-        <a href="#pricing" onClick={() => setMenuOpen(false)}>Pricing</a>
         <a href="/signup" className="nav-cta" onClick={() => setMenuOpen(false)}>Get Started</a>
       </div>
 
@@ -937,7 +935,7 @@ export default function LandingPage() {
       </section>
 
       {/* How It Works Section */}
-      <section className="how-it-works">
+      <section id="about" className="how-it-works">
         <div className="how-it-works-container">
           <div className="section-header">
             <div className="section-label">How It Works</div>
