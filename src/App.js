@@ -9,6 +9,7 @@ import HybridDashboard from './components/HybridDashboard';
 import Streak from './components/Streak';
 import './App.css';
 import Challenges from './components/Challenges';
+import Notifications from './components/Notifications'
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
           <Route path="*" element={<Navigate to="/" replace />} />
           <Route path="/calendar" element={<Calendar />} />
           <Route path="/streak" element={<Streak />} />
+          <Route path="/notifications" element={<Notifications />} />
         </Routes>
       </div>
     </Router>
