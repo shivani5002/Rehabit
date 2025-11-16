@@ -448,16 +448,16 @@ const getCurrentHabitData = () => {
   const doneToday = filteredHabits.filter(h => h.history?.[selectedDate] === "done").length;
 
   return (
-    <div className="hybrid-dashboard">
-      <div className="hybrid-root">
-        <HeaderHybrid
-          total={total}
-          doneToday={doneToday}
-          xp={xp}
-          username={user.username}
-          onDateSelect={(dateKey) => setSelectedDate(dateKey)}
-          selectedDate={selectedDate}
-        />
+     <div className="hybrid-dashboard">
+    <div className="hybrid-root">
+      <HeaderHybrid
+        total={total}
+        doneToday={doneToday}
+        xp={xp}
+        username={user.username}
+        onDateSelect={(dateKey) => setSelectedDate(dateKey)}
+        selectedDate={selectedDate}
+      />
 
          {/* ⭐ NEW: Add Performance Analytics Marquee */}
       <PerformanceAnalytics 
@@ -465,6 +465,7 @@ const getCurrentHabitData = () => {
         selectedDate={selectedDate}
       />
 
+        
         <main className="hybrid-main">
           <section className="habits-column">
             {filteredHabits.length === 0 ? (
