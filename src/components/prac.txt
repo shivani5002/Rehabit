@@ -1,0 +1,102 @@
+netstat -ano | findstr 8080
+taskkill /PID <PID> /F
+
+pipeline {
+    agent any
+
+    stages {
+        stage('Clone Repository') {
+            steps {
+                git branch: 'main', url: 'YOUR_GITHUB_URL'
+            }
+        }
+
+        stage('Build with Maven') {
+            steps {
+                bat 'mvn clean install'
+            }
+        }
+
+        stage('Run Application') {
+            steps {
+                bat 'java -cp target/MyApp-1.0-SNAPSHOT.jar com.example.App'
+            }
+        }
+    }
+}
+
+
+
+C:\apache-tomcat-9\conf\tomcat-users.xml - file
+
+<role rolename="manager-gui"/>
+<role rolename="manager-script"/>
+<user username="admin" password="admin123" roles="manager-gui,manager-
+script"/>
+
+
+// tomcat - pipeline - server
+pipeline{
+    agent any
+    stages{
+        stage('Clone Repository'){
+            steps{
+                git branch:'main', url: 'https://github.com/shivani5002/MetroRepo.git'
+            }
+        }
+        stage('Build WAR'){
+            steps{
+                bat 'mvn clean package'
+            }
+        }
+        stage('Deploy to Tomcat'){
+            steps{
+                bat 'copy target\\BookMetroTicket.war C:\\Users\\5520\\Downloads\\apache-tomcat-9.0.107-windows-x64\\apache-tomcat-9.0.107\\webapps\\'
+            }
+        }
+        stage('Done'){
+            steps{
+                echo "Deployment completed"
+            }
+        }
+    }
+}
+
+
+docker login
+docker tag hello-world shivanilingala/hello-world:latest
+docker push hello-world:latest
+
+kubectl create deployment myngnix --image=nginx
+kubectl set image deployment/myngnix nginx=nginx:latest
+kubectl get deployment
+kubectl get pods
+kubectl scale deployment myngnix --replicas=2
+kubectl expose deployment myngnix --type=NodePort --port=81
+kubectl get service deployment myngnix
+kubectl get deployment hello -o yaml
+kubectl create deployment hello --image=shivanilingala/hello-world
+kubectl set image deployment/hello hello-world:shivanilingala/hello-world:latest
+
+
+docker pull jasonrivers/nagios:latest
+docker run -d --name nagios -p 8888:80 jasonrivers/nagios:latest
+localhost:8888 - nagiosadmin, nagios
+
+ngrok http 8080 (Jenkins port no.)
+in GitHub settings webhook url/github-webhook/
+
+smtp.gmail.com 465
+
+AWS
+from nginx:alpine
+COPY . /usr/share/nginx/html
+
+FROM tomcat:9-jdk11
+COPY **/*.war /usr/local/tomcat/webapps
+
+sudo apt update
+sudo apt install docker.io -y
+sudo apt install git
+sudo apt install nano
+write dockerfile

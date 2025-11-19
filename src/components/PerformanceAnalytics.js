@@ -50,15 +50,15 @@ function PerformanceAnalytics({ habits, selectedDate }) {
         <div className="marquee-text">
           <span className="motivational-message">{message}</span>
           <span className="stat-separator"> • </span>
-          <span className="performance-stat">Today: {performance.todayStats.completed}/{performance.todayStats.total}</span>
+          <span className="performance-stat">Today: {performance.todayStats.completed}/{performance.todayStats.total-1}</span>
           <span className="stat-separator"> • </span>
-          <span className="performance-stat">Streak: {performance.streak}d</span>
+          <span className="performance-stat">Streak: {performance.streak-1}d</span>
           <span className="stat-separator"> • </span>
           <span className="performance-stat">Week: {performance.totalCompletionRate.toFixed(0)}%</span>
           <span className="stat-separator"> • </span>
           <span className="performance-stat">Trend: {performance.trend > 0 ? '📈' : '📉'} {Math.abs(performance.trend).toFixed(0)}%</span>
           <span className="stat-separator"> • </span>
-          <span className="performance-stat">Total Habits: {habits.length}</span>
+          <span className="performance-stat">Total Habits: {habits.length-1}</span>
         </div>
       </div>
     </div>
