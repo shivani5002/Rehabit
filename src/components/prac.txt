@@ -100,3 +100,139 @@ sudo apt install docker.io -y
 sudo apt install git
 sudo apt install nano
 write dockerfile
+
+
+normally 
+docker pull redis
+docker run --name my-redis -d redis
+docker exec -it my-redis redis-cli
+SET name "Shivani"
+GET name
+exit
+//docker hub - docker file
+docker build -t redis .
+docker tag redis shivanilingala/redis
+docker push shivanilingala/redis
+docker pull shivanilingala/redis:latest
+use it
+
+FROM alpine
+RUN apk add --update redis
+CMD ['redis-server']
+
+# Use official OpenJDK image
+FROM openjdk:17  || FROM eclipse-temurin:17-jdk
+
+# Set working directory inside container
+WORKDIR /app
+
+# Copy JAR file into container (replace your-application.jar)
+COPY target/myapp.jar /app/myapp.jar
+
+# Command to run the jar
+CMD ["java", "-jar", "/app/myapp.jar"]
+
+
+FROM tomcat:9.0
+RUN rm -rf /usr/local/tomcat/webapps/ROOT
+COPY target/SAH.war /usr/local/tomcat/webapps/ROOT.war
+EXPOSE 9090
+CMD ["catalina.sh","run"]
+docker build -t name .
+docker run -d -p 8089:8080 --name smartapp smarthub //internally it runs on that only
+
+
+//compose
+services:
+  web:
+    image: nginx
+    ports:
+      - "8060:80"
+  # db:
+  #   image: tomee
+  #   ports:
+  #     - "8085:8080"
+  redisinsight:
+     image: redis/redisinsight
+     ports:
+       - "8001:8001"
+
+
+//for app
+version: "3.8"
+
+services:
+  tomcat-app:
+    image: smarthub-image
+    ports:
+      - "9080:8080"
+    depends_on:
+      - mysql-db
+
+  mysql-db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: sah_db
+      MYSQL_USER: sah_user
+      MYSQL_PASSWORD: 
+    ports:
+      - "3307:3306"
+
+//wordpress
+services:
+  wordpress:
+      image: wordpress:latest
+      ports:
+       - "9080:80"
+      environment: 
+        WORDPRESS_DB_HOST: db:3306
+        WORDPRESS_DB_USER: wordpress
+        WORDPRESS_DB_PASSWORD: wordpress
+        WORDPRESS_DB_NAME: wordpress
+      depends_on:
+        - db
+
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+
+//app
+from flask import Flask
+app=Flask(__name__)
+@app.rout("/")
+def home():
+    return "Hello from me"
+app.run(host="0.0.0.0", port=5000)
+
+//dockerfile
+FROM python:3.10-slim
+WORKDIR /app
+COPY app.py /app/
+RUN pip install flask
+CMD ["python","app.py"]
+
+//yml
+version: "3.9"
+
+services:
+  web:
+     build:
+     ports:
+       - "5000:5000"
+     depends_on:
+       - db
+db:
+   image: mysql:8.0
+   restart: always
+   environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: mydb
+  ports:
+   - "3306:3306"
+
+docker-compose up --build
